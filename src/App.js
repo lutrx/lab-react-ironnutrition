@@ -8,18 +8,14 @@ function App() {
   return (
     <div className="App">
       <h2>Food List</h2>
-      <FoodBox food={ {
-        name: "Orange",
-        calories: 85,
-        image: "https://i.imgur.com/abKGOcv.jpg",
-        servings: 1
-      }} />
       {foods.map((food, index) => {
         return (
-          <div key={index}>
-            <p> {food.name} </p>
-            <img src={food.image} alt="food-img" width={150} />
-          </div>
+          <FoodBox food={ {
+            name: food.name,
+            calories: food.calories,
+            image: food.image,
+            servings: food.servings
+          }} />
         )
       })}
     </div>
