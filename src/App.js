@@ -4,6 +4,8 @@ import { Row, Divider, Button } from 'antd';
 import foodsData from './foods.json';
 import FoodBox from './components/FoodBox.jsx'
 import AddFoodForm from './components/AddFoodForm';
+import Search from './components/Search';
+import { getSuggestedQuery } from '@testing-library/react';
 
 function App() {
   const [foods, setFoods] = useState(foodsData);
@@ -14,12 +16,13 @@ function App() {
       newFood,
   ])
   resetInput();
-}
+  }
+
   return (
     <div className="App">
     <AddFoodForm handleSubmit = {handleSubmit}/>
     <Button> Hide Form / Add New Food </Button>
-    {/* Display Search component here */}
+    <Search foods={foods}/>
     <Divider>Food List</Divider>
     <Row style={{ width: '100%', justifyContent: 'center' }}>
       {foods.map((food, index) => {
