@@ -5,7 +5,6 @@ import foodsData from './foods.json';
 import FoodBox from './components/FoodBox.jsx'
 import AddFoodForm from './components/AddFoodForm';
 import Search from './components/Search';
-import { getSuggestedQuery } from '@testing-library/react';
 
 function App() {
   const [foods, setFoods] = useState(foodsData);

@@ -13,7 +13,7 @@ function Search({foods, setFoods}) {
                 return food.name.toLowerCase().includes(event.target.value.toLowerCase())
             }
         })
-        console.log(mappedFoods);
+        setQuery(event.target.value)
         setFoods(mappedFoods);
     }
   return (
@@ -21,7 +21,7 @@ function Search({foods, setFoods}) {
       <Divider>Search</Divider>
 
       <label>Search</label>
-      <Input value={query} type="search" onChange={(event) => handleSearch(event)} />
+      <Input value={query} type="search" onChange={handleSearch} />
     </>
   );
 }
