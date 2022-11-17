@@ -8,6 +8,8 @@ import Search from './components/Search';
 
 function App() {
   const [foods, setFoods] = useState(foodsData);
+  const [query, setQuery] = useState('')
+
   const handleSubmit = (event, newFood, resetInput) => {
     event.preventDefault()
     setFoods([
@@ -17,21 +19,27 @@ function App() {
   resetInput();
   }
 
+
+
+  const deleteItem = (itemId) => {
+    return
+  }
+
   return (
     <div className="App">
     <AddFoodForm handleSubmit = {handleSubmit}/>
     <Button> Hide Form / Add New Food </Button>
-    <Search foods={foods} setFoods={setFoods}/>
+    <Search query={query} setQuery={setQuery}/>
     <Divider>Food List</Divider>
-    <Row style={{ width: '100%', justifyContent: 'center' }}>
-      {foods.map((food, index) => {
+    <Row gutter={[8, 8]}>
+      {foods.filter(food => food.name.toLowerCase().includes(query.toLowerCase())).map((food, index) => {
         return (
           <FoodBox food={ {
             name: food.name,
             calories: food.calories,
             image: food.image,
             servings: food.servings
-          }} />
+          }} deleteItem={deleteItem} />
         )
       })}
       </Row>

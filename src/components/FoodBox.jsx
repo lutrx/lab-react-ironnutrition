@@ -1,9 +1,9 @@
 import { Card, Col, Button } from 'antd';
 
 // Iteration 2
-function FoodBox({food}) {
+function FoodBox({food, deleteItem}) {
   return (
-    <Col>
+    <Col span={8}>
       <Card
         title={food.name}
         style={{ width: 230, height: 300, margin: 10 }}
