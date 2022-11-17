@@ -21,7 +21,7 @@ function App() {
     <div className="App">
     <AddFoodForm handleSubmit = {handleSubmit}/>
     <Button> Hide Form / Add New Food </Button>
-    <Search foods={foods}/>
+    <Search foods={foods} setFoods={setFoods}/>
     <Divider>Food List</Divider>
     <Row style={{ width: '100%', justifyContent: 'center' }}>
       {foods.map((food, index) => {

@@ -5,7 +5,6 @@ import {useState} from 'react';
 function Search({foods, setFoods}) {
     const [query, setQuery] = useState('')
     const handleSearch = (event) => {
-        event.target.value = query;
         const mappedFoods = foods.filter(food => {
             if (event.target.value === "") {
                 return foods
